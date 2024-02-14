@@ -15,10 +15,17 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
 1. Run the following command to check the list of available locations for API Center.
 
     ```bash
+    # Bash
     az provider show \
         -n Microsoft.ApiCenter \
         --query "sort(resourceTypes[?resourceType=='services'] | [0].locations[? !(ends_with(@, 'EUAP'))])" | \
         jq '[.[] | ascii_downcase | sub(" "; ""; "i")]'
+
+    # PowerShell
+    az provider show `
+        -n Microsoft.ApiCenter `
+        --query "sort(resourceTypes[?resourceType=='services'] | [0].locations[? !(ends_with(@, 'EUAP'))])" | `
+        ConvertFrom-Json | ForEach-Object { $_.ToLowerInvariant().Replace(" ", "") } | ConvertTo-Json
     ```
 
 1. Open `./infra/main.bicep` and update the `location` parameter with the desired locations.
