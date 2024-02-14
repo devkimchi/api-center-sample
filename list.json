@@ -1,0 +1,80 @@
+{
+  "authorizations": [
+    {
+      "applicationId": "a45c1cb0-6899-445e-8961-29576781c228",
+      "roleDefinitionId": "eb535636-6f68-45ec-903f-506493b326c2"
+    },
+    {
+      "applicationId": "c3ca1a77-7a87-4dba-b8f8-eea115ae4573",
+      "roleDefinitionId": "eb535636-6f68-45ec-903f-506493b326c2"
+    }
+  ],
+  "id": "/subscriptions/891774a2-e890-4a46-a922-956fc33d5e82/providers/Microsoft.ApiCenter",
+  "namespace": "Microsoft.ApiCenter",
+  "providerAuthorizationConsentState": null,
+  "registrationPolicy": "RegistrationRequired",
+  "registrationState": "Registered",
+  "resourceTypes": [
+    {
+      "aliases": null,
+      "apiProfiles": null,
+      "apiVersions": [
+        "2024-03-01",
+        "2023-07-01-preview"
+      ],
+      "capabilities": "CrossResourceGroupResourceMove, CrossSubscriptionResourceMove, SystemAssignedResourceIdentity, SupportsTags, SupportsLocation",
+      "defaultApiVersion": null,
+      "locationMappings": null,
+      "locations": [
+        "East US",
+        "West Europe",
+        "UK South",
+        "Central India",
+        "Australia East",
+        "Central US EUAP"
+      ],
+      "properties": null,
+      "resourceType": "services",
+      "zoneMappings": null
+    },
+    {
+      "aliases": null,
+      "apiProfiles": null,
+      "apiVersions": [
+        "2024-03-01",
+        "2023-07-01-preview"
+      ],
+      "capabilities": "None",
+      "defaultApiVersion": null,
+      "locationMappings": null,
+      "locations": [
+        "East US",
+        "Central US EUAP"
+      ],
+      "properties": null,
+      "resourceType": "operations",
+      "zoneMappings": null
+    },
+    {
+      "aliases": null,
+      "apiProfiles": null,
+      "apiVersions": [
+        "2024-03-01"
+      ],
+      "capabilities": "None",
+      "defaultApiVersion": null,
+      "locationMappings": null,
+      "locations": [
+        "East US",
+        "West Europe",
+        "UK South",
+        "Central India",
+        "Australia East",
+        "Central US EUAP"
+      ],
+      "properties": null,
+      "resourceType": "services/eventGridFilters",
+      "zoneMappings": null
+    }
+  ]
+}
