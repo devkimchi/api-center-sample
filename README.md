@@ -70,7 +70,7 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
 
    > **Note:** You may be asked to enter your Azure subscription and desired location to provision resources.
 
-1. Add the USPTO API to API Management.
+1. Add the [USPTO API](https://developer.uspto.gov/api-catalog) to API Management.
 
     ```bash
     # Bash
@@ -108,6 +108,8 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
         --api-id uspto
     ```
 
+### Register APIs to API Center
+
 1. Register Weather Forecast API to API Center via Azure CLI.
 
     ```bash
@@ -124,7 +126,7 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
         --api-location ./infra/weather-forecast.json
     ```
 
-1. Register Pet Store API to API Center via Azure Portal by following this document: [Register API](https://learn.microsoft.com/azure/api-center/register-apis)
+1. Register [Pet Store API](https://editor.swagger.io/) to API Center via Azure Portal by following this document: [Register API](https://learn.microsoft.com/azure/api-center/register-apis)
 1. Import the USPTO API from APIM to API Center via Azure CLI.
 
     ```bash
