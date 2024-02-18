@@ -1,3 +1,7 @@
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+using WebApp.ApiClients;
 using WebApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<PetStoreClient>(p =>
+{
+    var provider = new AnonymousAuthenticationProvider();
+    var adapter = new HttpClientRequestAdapter(provider);
+    var client = new PetStoreClient(adapter);
+
+    return client;
+});
 
 var app = builder.Build();
 

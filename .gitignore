@@ -482,4 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
 .azure
+kiota-lock.json

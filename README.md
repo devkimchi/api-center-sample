@@ -4,14 +4,14 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
 
 ## Prerequisites
 
-- [.NET SDK 8](https://dotnet.microsoft.com/download/dotnet/8.0) or later
-- [Visual Studio Code](https://code.visualstudio.com/) with the extensions:
-  - [API Center](https://marketplace.visualstudio.com/items?itemName=apidev.azure-api-center)
-  - [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-  - [Kiota](https://marketplace.visualstudio.com/items?itemName=ms-graph.kiota)
-- [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview)
-- [Azure CLI](https://learn.microsoft.com/cli/azure/what-is-azure-cli) with the extensions:
-  - [API Center](https://github.com/Azure/azure-cli-extensions/tree/main/src/apic-extension)
+- [.NET SDK 8](https://dotnet.microsoft.com/download/dotnet/8.0?WT.mc_id=dotnet-122171-juyoo) or later
+- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=dotnet-122171-juyoo) with the extensions:
+  - [API Center](https://marketplace.visualstudio.com/items?itemName=apidev.azure-api-center&WT.mc_id=dotnet-122171-juyoo)
+  - [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client&WT.mc_id=dotnet-122171-juyoo)
+  - [Kiota](https://marketplace.visualstudio.com/items?itemName=ms-graph.kiota&WT.mc_id=dotnet-122171-juyoo)
+- [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=dotnet-122171-juyoo)
+- [Azure CLI](https://learn.microsoft.com/cli/azure/what-is-azure-cli?WT.mc_id=dotnet-122171-juyoo) with the extensions:
+  - [API Center](https://github.com/Azure/azure-cli-extensions/tree/main/src/apic-extension&WT.mc_id=dotnet-122171-juyoo)
 
 ## Getting Started
 
@@ -175,13 +175,13 @@ This provides sample Bicep files, ASP.NET Core Minimal API as server-side API ap
         --source-resource-ids "$APIM_RESOURCE_ID/apis/*"
     ```
 
-### Export API Client from API Center via VS Code
+### Generate API Client from API Center via VS Code
 
-TBD
+You can generate the API client from the API Center extension in Visual Studio Code by following this blog post: [Azure API Center: The First Look](https://devkimchi.com/2024/02/19/api-center-first-look/)
 
 ## Resources
 
-- [Azure API Center](https://learn.microsoft.com/azure/api-center/overview)
-- [Create the first API Center](https://learn.microsoft.com/azure/api-center/set-up-api-center)
+- [Azure API Center](https://learn.microsoft.com/azure/api-center/overview?WT.mc_id=dotnet-122171-juyoo)
+- [Create the first API Center](https://learn.microsoft.com/azure/api-center/set-up-api-center?WT.mc_id=dotnet-122171-juyoo)
 - [Playlist: Azure API Center](https://www.youtube.com/playlist?list=PLI7iePan8aH75Qz8h4yQBEC-uS339CUyi)
 - [Azure API Center Feedback](https://github.com/Azure/api-center-preview)
