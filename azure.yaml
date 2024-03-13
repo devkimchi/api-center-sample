@@ -6,3 +6,19 @@ infra:
   provider: bicep
   path: infra
   module: main
+
+pipeline:
+  provider: github
+
+services:
+  webapp:
+    host: appservice
+    project: ./src/WebApp/WebApp.csproj
+    language: dotnet
+    resourceName: "appsvc-${AZURE_ENV_NAME}-web"
+
+  apiapp:
+    host: appservice
+    project: ./src/ApiApp/ApiApp.csproj
+    language: dotnet
+    resourceName: "appsvc-${AZURE_ENV_NAME}-api"

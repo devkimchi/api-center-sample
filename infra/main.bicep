@@ -49,9 +49,28 @@ module apim './provision-ApiManagement.bicep' = {
   }
 }
 
-output apicId string = apic.outputs.id
-output apicName string = apic.outputs.name
-output apicWorkspace string = apic.outputs.workspace
-output apimId string = apim.outputs.id
-output apimName string = apim.outputs.name
-output apimSubscriptionKey string = apim.outputs.subscriptionKey
+module fncapp './provision-functionApp.bicep' = {
+  name: 'FunctionApp'
+  scope: rg
+  params: {
+    name: name
+    location: location
+    tags: tags
+  }
+}
+
+var appTypes = [
+  'web'
+  'api'
+]
+
+module appsvcs './provision-appService.bicep' = [for appType in appTypes: {
+  name: 'AppService_${appType}'
+  scope: rg
+  params: {
+    name: name
+    location: location
+    tags: tags
+    appType: appType
+  }
+}]
