@@ -3,10 +3,6 @@ param location string = resourceGroup().location
 
 param tags object = {}
 
-param appInsightsId string
-@secure()
-param appInsightsInstrumentationKey string
-
 param apiManagementPublisherName string
 param apiManagementPublisherEmail string
 
@@ -19,11 +15,10 @@ param apiManagementPublisherEmail string
 param apiManagementPolicyFormat string = 'xml'
 param apiManagementPolicyValue string = '<!--\r\n  IMPORTANT:\r\n  - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n  - Only the <forward-request> policy element can appear within the <backend> section element.\r\n  - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n  - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n  - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.\r\n  - To remove a policy, delete the corresponding policy statement from the policy document.\r\n  - Policies are applied in the order of their appearance, from the top down.\r\n-->\r\n<policies>\r\n  <inbound />\r\n  <backend>\r\n    <forward-request />\r\n  </backend>\r\n  <outbound />\r\n  <on-error />\r\n</policies>'
 
-var appInsights = {
-  id: appInsightsId
+resource appins 'Microsoft.Insights/components@2020-02-02' existing = {
   name: 'appins-${name}'
-  instrumentationKey: appInsightsInstrumentationKey
 }
+
 
 var apiManagement = {
   name: 'apim-${name}'
@@ -68,13 +63,13 @@ resource apim 'Microsoft.ApiManagement/service@2022-08-01' = {
 }
 
 resource apimlogger 'Microsoft.ApiManagement/service/loggers@2022-08-01' = {
-  name: appInsights.name
+  name: appins.name
   parent: apim
   properties: {
     loggerType: 'applicationInsights'
-    resourceId: appInsights.id
+    resourceId: appins.id
     credentials: {
-      instrumentationKey: appInsights.instrumentationKey
+      instrumentationKey: appins.properties.InstrumentationKey
     }
   }
 }
@@ -110,4 +105,3 @@ resource apimsubscription 'Microsoft.ApiManagement/service/subscriptions@2022-08
 
 output id string = apim.id
 output name string = apim.name
-output subscriptionKey string = apimsubscription.listSecrets('2022-08-01').primaryKey

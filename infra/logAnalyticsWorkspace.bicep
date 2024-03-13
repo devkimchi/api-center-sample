@@ -1,10 +1,11 @@
 param name string
+param suffix string = 'linter'
 param location string = resourceGroup().location
 
 param tags object = {}
 
 var workspace = {
-  name: 'wrkspc-${name}'
+  name: 'wrkspc-${name}${suffix == null || suffix == '' ? '' : '-'}${suffix}'
   location: location
   tags: tags
 }
