@@ -1,6 +1,16 @@
 name: Register API Definition to Azure API Center
 on:
   workflow_dispatch:
+    inputs:
+      resource-group:
+        description: 'Azure Resource Group name'
+        required: true
+      resource-name:
+        description: 'Azure API Center resource name'
+        required: true
+      file-location:
+        description: 'API Definition file location'
+        required: true
 
 permissions:
   id-token: write
@@ -37,4 +47,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az apic api register -g ${{ vars.RESOURCE_GROUP }} -s ${{ vars.RESOURCE_NAME }} --api-location ${{ vars.FILE_LOCATION }}
+            az apic api register -g ${{ inputs.resource-group }} -s ${{ inputs.resource-name }} --api-location ${{ github.workspace }}/${{ inputs.file-location }}

@@ -1,0 +1,33 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Spotify API",
+    "description": "Spotify APIs",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://your-resource-name.azure-api.net/spotify"
+    }
+  ],
+  "paths": {
+    "/access-token": {
+      "get": {
+        "summary": "Get Access Token",
+        "operationId": "get-access-token",
+        "responses": {
+          "200": {
+            "description": "Get access token to Spotify API",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

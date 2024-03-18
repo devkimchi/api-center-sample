@@ -484,4 +484,7 @@ $RECYCLE.BIN/
 *.swp
 
 .azure
+out/
 kiota-lock.json
+app.json
+sp.json
